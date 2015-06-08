@@ -1,11 +1,28 @@
 # -*- coding: utf-8 -*-
 """
-@description:
+@description: pytest配置
 """
-__author__ = "lina"
+__author__ = "cm"
 
 
 import pytest
+from sut import browser_factory
+from sut import config
+
+
+def _browser_launch_exit(request, browser_name, does_clean_data=False):
+
+    browser = browser_factory.get_browser(browser_name)
+    if does_clean_data:
+        # 模拟清理userdata的操作
+        print("##Mock: clean user data")
+
+    def fin():
+        # 退出浏览器动作
+        browser.close_browser()
+
+    request.addfinalizer(fin)
+    return browser
 
 
 @pytest.fixture(scope="module")
@@ -15,20 +32,9 @@ def fixture_browser_launch_exit(request):
     :param request:
     :return:
     """
-    tin.system.kill_process("UCBrowser.exe")
-    if does_clean_data:
-        time.sleep(1)
-        uclib.clean_userdata()
-    if load_bookmarks:
-        tin.browser.copy_dir()
-    browser = tin.browser_factory.get_browser(browser_constant)
+    return _browser_launch_exit(request, config, does_clean_data=False)
 
-    def fin():
-        # 退出浏览器动作
-        browser.close_browser()
 
-    request.addfinalizer(fin)
-    return browser
 
 
 
@@ -39,5 +45,5 @@ def fixture_browser_clean_launch(request):
     :param request:
     :return:
     """
-    return _browser_launch_exit(request, tin.constant.CLASS_UC, does_clean_data=True)
+    return _browser_launch_exit(request, config, does_clean_data=True)
 

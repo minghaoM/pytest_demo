@@ -6,21 +6,22 @@ __author__ = "cm"
 
 
 import time
+from browser_base import BrowserBase
 
 
-class DownloadBrowser(object):
+class DownloadBrowser(BrowserBase):
 
     def download(self, url):
         # 模拟下载
-        print("downloading {0}".format(url))
+        print("##Mock: downloading {0}".format(url))
         time.sleep(1)
-        print("")
+        print("download done.")
 
     def exit(self):
-        print("exit browser")
+        print("##Mock: exit browser")
 
     def open_url(self, url):
-        print("open url: {0}".format(url))
+        print("##Mock: open url: {0}".format(url))
 
     def go_back(self):
-        print("go back")
+        print("##Mock: go back")
