@@ -147,7 +147,7 @@ def fixture_download_clean_launch(request):
     return _browser_launch_exit(request, config.BROWSER_DOWNLOAD, does_clean_data=True)
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="session")
 def fixture_gesture_launch_exit(request):
     """
     浏览器启动退出固件
@@ -157,7 +157,7 @@ def fixture_gesture_launch_exit(request):
     return _browser_launch_exit(request, config.BROWSER_MOUSE_GESTURE, does_clean_data=False)
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="session")
 def fixture_gesture_clean_launch(request):
     """
     浏览器启动前清除UserData

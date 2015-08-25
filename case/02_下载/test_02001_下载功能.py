@@ -10,6 +10,7 @@ import pytest
 
 @pytest.mark.priority(1)
 def test_02001(fixture_download_launch_exit):
+    print("***run case 02001")
     assert True
 
 

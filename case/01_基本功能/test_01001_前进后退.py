@@ -10,6 +10,7 @@ import pytest
 
 @pytest.mark.priority(1)
 def test_01001(fixture_browser_launch_exit):
+    print("***run case 01001")
     browser_obj = fixture_browser_launch_exit
     browser_obj.open_url("http://www.uc.cn")
     browser_obj.open_url("http://www.uc.cn/ucbrowser/download/")

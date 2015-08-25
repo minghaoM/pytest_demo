@@ -10,6 +10,7 @@ import pytest
 
 @pytest.mark.priority(2)
 def test_01002(fixture_browser_launch_exit):
+    print("***run case 01002")
     assert True
 
 

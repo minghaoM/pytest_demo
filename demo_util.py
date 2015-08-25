@@ -11,9 +11,8 @@ import time
 
 def pause_show_info(info):
     print("=" * 70)
-    print("### {0}".format(info))
+    print("=== {0}".format(info))
     time.sleep(1)
-    # raw_input("Press any key to continue")
 
 
 def gen_report_file(file_name, content):
