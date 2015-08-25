@@ -1,16 +1,32 @@
 # -*- coding: utf-8 -*-
 """
-@author: minghao.ma@shenma-inc.com
-@description: 
+@description:
 """
-__author__ = "sven"
+__author__ = "sa"
 
 
-import time
 from browser_base import BrowserBase
+
+GESTURE_VAL_FORWARD = 1
+GESTURE_VAL_BACK = 2
+
+GESTURE_TYPE_1 = 1
+GESTURE_TYPE_2 = 2
 
 
 class MouseGestureBrowser(BrowserBase):
 
-    pass
+    def do_gesture(self, gesture_type):
+        """
+        模拟打开新标签
+        """
+        print("##Mock: do gesture: {0}".format(gesture_type))
+        return True
+
+    def set_gesture(self, gesture_type, gesture_val):
+        """
+        模拟打开新标签
+        """
+        print("##Mock: set gesture")
+        return True
 

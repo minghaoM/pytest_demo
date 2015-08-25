@@ -3,3 +3,15 @@
 description: 
 """
 __author__ = "lina"
+
+
+import pytest
+
+
+@pytest.mark.priority(1)
+def test_02001(fixture_download_launch_exit):
+    assert True
+
+
+if __name__ == "__main__":
+    pytest.main(args=[__file__, "-s"])
