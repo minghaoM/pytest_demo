@@ -51,7 +51,7 @@ class ReportBase(object):
         """
         每个testcase执行完的report处理
         """
-        demo_util.pause_show_info("pytest_runtest_logreport in {0}".format(self))
+        demo_util.pause_show_info("pytest_runtest_logreport at {0} in {1}".format(report.when, self))
         if report.passed:
             if report.when == "call": # ignore setup/teardown
                 self.append_pass(report)

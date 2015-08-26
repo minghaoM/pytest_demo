@@ -31,7 +31,7 @@ def test_gen_report_file(tmpdir):
     ((-2, -3, 4), False),
     ((0, 0, 0), False)
 ])
-def test_is_triangle(input_par, expected):
+def test_is_triangle(input_par, expected, fixture_browser_launch_exit):
     print("***run case is_triangle")
     assert demo_util.is_triangle(input_par) == expected
 
