@@ -10,7 +10,7 @@ import os
 import pytest
 
 
-DEFAULT_CASE_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "case")
+DEFAULT_CASE_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "uicase")
 
 
 def run():

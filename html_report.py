@@ -4,6 +4,7 @@
 """
 __author__ = "cm"
 
+import os
 import demo_util
 from report_base import ReportBase
 
@@ -15,6 +16,8 @@ class HtmlReport(ReportBase):
         :return:
         """
         demo_util.pause_show_info("pytest_sessionfinish in HtmlReport")
-        demo_util.gen_report_file("html_report.txt", "html test")
+        file_dir = os.path.abspath(os.path.dirname(__file__))
+        file_path = os.path.join(file_dir, "html_report.txt")
+        demo_util.gen_report_file(file_path, "html test")
 
 

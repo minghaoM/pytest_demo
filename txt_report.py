@@ -5,6 +5,7 @@
 __author__ = "cm"
 
 
+import os
 import demo_util
 from report_base import ReportBase
 
@@ -16,4 +17,6 @@ class TxtReport(ReportBase):
         :return:
         """
         demo_util.pause_show_info("pytest_sessionfinish in TxtReport")
-        demo_util.gen_report_file("txt_report.txt", "txt test")
+        file_dir = os.path.abspath(os.path.dirname(__file__))
+        file_path = os.path.join(file_dir, "txt_report.txt")
+        demo_util.gen_report_file(file_path, "txt test")
