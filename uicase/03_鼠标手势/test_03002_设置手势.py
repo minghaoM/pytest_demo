@@ -9,7 +9,7 @@ import pytest
 
 
 @pytest.mark.priority(2)
-def test_02002(fixture_gesture_clean_launch):
+def test_03002(fixture_gesture_clean_launch):
     print("***run case 03002")
     assert True
 

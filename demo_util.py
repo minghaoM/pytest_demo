@@ -16,7 +16,7 @@ def gen_report_file(file_path, content):
     :param content: 文件内容
     :return:
     """
-    print("outputing report:{0}".format(file_path))
+    print("outputing report to -> {0}".format(file_path))
     with open(file_path, "w") as f:
         f.write(content)
     return True
